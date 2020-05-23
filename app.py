@@ -60,12 +60,12 @@ img_width = 32
 img_height = 32
 img_depth = 1
 
-with st.spinner("Please wait loading data"):
-    X,Y_d = load_data()
+#with st.spinner("Please wait loading data"):
+#    X,Y_d = load_data()
 
-X_images = X.values.reshape(X.shape[0], img_width, img_height)
-binencoder = LabelBinarizer()
-Y = binencoder.fit_transform(Y_d)
+#X_images = X.values.reshape(X.shape[0], img_width, img_height)
+#binencoder = LabelBinarizer()
+#Y = binencoder.fit_transform(Y_d)
 
 
 uploaded_file = st.file_uploader("Select an image with Hindi Text",type=['png','jpg'])
