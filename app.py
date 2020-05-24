@@ -46,7 +46,7 @@ st.sidebar.markdown("""
 
 @st.cache
 def load_data():
-    dataset = pd.read_csv("hello.csv")
+    dataset = pd.read_csv("data.csv")
     #X = dataset.iloc[:,:-1]
     Y_d = dataset.iloc[:,-1]
     return Y_d
