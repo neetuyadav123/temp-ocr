@@ -68,9 +68,11 @@ binencoder = LabelBinarizer()
 Y = binencoder.fit_transform(Y_d)
 
 
-uploaded_file = st.file_uploader("Select an image with Hindi Text",type=['png','jpg'])
+uploaded_file = st.file_uploader("Select an image with Hindi Text (Requires 32x32 image)",type=['png','jpg'])
 if uploaded_file:
     image = Image.open(uploaded_file)
+    image = image.resize((32,32)).convert("L").save("chill.png") ###
+    image = Image.open("chill.png")
     st.header("Uploaded Image")
     st.image(image.resize((256,256),Image.BILINEAR), caption='Uploaded Image.')
     image = image.resize((img_width,img_height),Image.LIBIMAGEQUANT)

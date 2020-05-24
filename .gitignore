@@ -8,6 +8,7 @@ __pycache__/
 
 # Distribution / packaging
 .Python
+.envrc
 build/
 develop-eggs/
 dist/
@@ -15,6 +16,7 @@ downloads/
 env
 eggs/
 .eggs/
+chill.png
 lib/
 lib64/
 parts/
