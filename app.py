@@ -46,10 +46,10 @@ st.sidebar.markdown("""
 
 @st.cache
 def load_data():
-    dataset = pd.read_csv("data.csv")
-    X = dataset.iloc[:,:-1]
+    dataset = pd.read_csv("hello.csv")
+    #X = dataset.iloc[:,:-1]
     Y_d = dataset.iloc[:,-1]
-    return X,Y_d
+    return Y_d
 
 def load_model(path ='model/model.h5'):
     return tf.keras.models.load_model(path)
@@ -60,12 +60,12 @@ img_width = 32
 img_height = 32
 img_depth = 1
 
-#with st.spinner("Please wait loading data"):
-#    X,Y_d = load_data()
+with st.spinner("Please wait loading data"):
+    Y_d = load_data()
 
 #X_images = X.values.reshape(X.shape[0], img_width, img_height)
-#binencoder = LabelBinarizer()
-#Y = binencoder.fit_transform(Y_d)
+binencoder = LabelBinarizer()
+Y = binencoder.fit_transform(Y_d)
 
 
 uploaded_file = st.file_uploader("Select an image with Hindi Text",type=['png','jpg'])
